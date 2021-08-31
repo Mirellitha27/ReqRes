@@ -11,6 +11,7 @@ import com.iwebsapp.reqres.databinding.ActivityLoginBinding
 import com.iwebsapp.reqres.ui.account.view.CreateAccountActivity
 import com.iwebsapp.reqres.ui.login.presenter.LoginPresenter
 import com.iwebsapp.reqres.ui.login.presenter.LoginPresenterImpl
+import com.iwebsapp.reqres.utils.UserSession
 
 class LoginActivity : AppCompatActivity(), LoginView {
     private lateinit var binding: ActivityLoginBinding
@@ -43,9 +44,11 @@ class LoginActivity : AppCompatActivity(), LoginView {
         finish()
     }
 
-    override fun goMain() {
+    override fun goMain(token: String) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        val userSession = UserSession(this)
+        userSession.setToken(token)
         finish()
     }
 }

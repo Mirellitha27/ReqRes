@@ -19,7 +19,7 @@ class LoginPresenterImpl(private var view: LoginView) : LoginPresenter {
         view.toast(text)
     }
 
-    override fun goMain() {
-        view.goMain()
+    override fun goMain(token: String) {
+        view.goMain(token)
     }
 }

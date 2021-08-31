@@ -20,7 +20,7 @@ class LoginInteractorImpl(private var presenter: LoginPresenter) : LoginInteract
                 if (response.isSuccessful)  {
                     Log.d("TAG", "response ${response.body()!!.token}")
                     presenter.toast(R.string.successful_login)
-                    presenter.goMain()
+                    presenter.goMain(response.body()!!.token.toString())
                 } else  {
                     presenter.toast(R.string.occurred_error)
                 }

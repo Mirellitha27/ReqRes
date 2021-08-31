@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.iwebsapp.reqres.databinding.ActivityMainBinding
 import com.iwebsapp.reqres.ui.login.view.LoginActivity
+import com.iwebsapp.reqres.utils.UserSession
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,6 +55,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goLogin() {
+        val userSession = UserSession(this)
+        userSession.logout()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
