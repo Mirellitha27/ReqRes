@@ -1,5 +1,6 @@
 package com.iwebsapp.reqres.api
 
+import com.iwebsapp.reqres.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -7,7 +8,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    private const val URL = "https://reqres.in/"
 
     private val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
@@ -17,7 +17,7 @@ object RetrofitClient {
         .addInterceptor(logger)
 
     // Create Retrofit Builder
-    private val builder = Retrofit.Builder().baseUrl(URL)
+    private val builder = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttp.build())
 
