@@ -19,7 +19,7 @@ class CreateAccountInteractorImpl(private var presenter: CreateAccountPresenter)
             override fun onResponse(call: Call<ResponseRegister>, response: Response<ResponseRegister>) {
                 if (response.isSuccessful)  {
                     Log.d("TAG", "response ${response.body()!!.token}")
-                    presenter.toast(R.string.successful_login)
+                    presenter.toast(R.string.successful_account)
                     presenter.goMain()
                 } else  {
                     presenter.toast(R.string.occurred_error)

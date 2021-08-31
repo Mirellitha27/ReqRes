@@ -3,6 +3,8 @@ package com.iwebsapp.reqres
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -16,7 +18,7 @@ import com.iwebsapp.reqres.ui.login.view.LoginActivity
 import com.iwebsapp.reqres.utils.UserSession
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var textViewEmail: TextView
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -41,11 +43,17 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val sigOffItem: MenuItem = navView.getMenu().findItem(R.id.sign_off)
+        val sigOffItem: MenuItem = navView.menu.findItem(R.id.sign_off)
         sigOffItem.setOnMenuItemClickListener { item: MenuItem? ->
             goLogin()
             true
         }
+
+
+        val header: View = navView.getHeaderView(0)
+        textViewEmail = header.findViewById(R.id.textViewEmail)
+        val userSession = UserSession(this)
+        textViewEmail.text = userSession.getEmial()
     }
 
 

@@ -49,6 +49,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
         startActivity(intent)
         val userSession = UserSession(this)
         userSession.setToken(token)
+        userSession.setEmail(binding.editEmail.text.toString())
         finish()
     }
 }

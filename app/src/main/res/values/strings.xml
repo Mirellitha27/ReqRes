@@ -23,5 +23,6 @@
     <string name="create_account">Crear cuenta</string>
     <string name="occurred_error">Ha ocurrido un error. Usuario / contraseña incorrectos</string>
     <string name="successful_login">Login exitoso</string>
+    <string name="successful_account">Cuenta creada con éxito.</string>
     <string name="menu_search">Buscar</string>
 </resources>

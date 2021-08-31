@@ -11,6 +11,7 @@ import com.iwebsapp.reqres.databinding.ActivityCreateAccountBinding
 import com.iwebsapp.reqres.ui.account.presenter.CreateAccountPresenter
 import com.iwebsapp.reqres.ui.account.presenter.CreateAccountPresenterImpl
 import com.iwebsapp.reqres.ui.login.presenter.LoginPresenterImpl
+import com.iwebsapp.reqres.ui.login.view.LoginActivity
 
 class CreateAccountActivity : AppCompatActivity(), CreateAccountView {
     private lateinit var binding: ActivityCreateAccountBinding
@@ -38,7 +39,7 @@ class CreateAccountActivity : AppCompatActivity(), CreateAccountView {
     }
 
     override fun goMain() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
     }

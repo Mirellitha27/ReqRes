@@ -13,8 +13,18 @@ class UserSession (context: Context){
         editor.apply()
     }
 
+    fun setEmail(email: String) {
+        val editor = sharedPref.edit()
+        editor.putString("email", email)
+        editor.apply()
+    }
+
     fun getToken(): String? {
         return sharedPref.getString("token", "")
+    }
+
+    fun getEmial(): String? {
+        return sharedPref.getString("email", "")
     }
 
     fun logout() {
