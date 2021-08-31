@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">200dp</dimen>
+
+    <dimen name="space_min">4dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_avg">16dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_big">32dp</dimen>
+    <dimen name="space_huge">64dp</dimen>
+    <dimen name="dimen_avatar">100dp</dimen>
+</resources>
