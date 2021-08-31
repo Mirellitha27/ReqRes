@@ -14,14 +14,14 @@
         android:theme="@style/Theme.ReqRes">
 
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".ui.login.view.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.ReqRes.NoActionBar">
 
         </activity>
 
         <activity
-            android:name=".ui.account.CreateAccountActivity"
+            android:name=".ui.account.view.CreateAccountActivity"
             android:exported="true"
             android:theme="@style/Theme.ReqRes.NoActionBar"/>
 
